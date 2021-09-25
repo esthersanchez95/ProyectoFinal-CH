@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 40px;
+    color: #1F2421;
+    text-align: center;
+    padding: 30px;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: white;
+    text-align: center;
+}
+
+h4{
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    text-align: center;
+}
+
+h6{
+    font-weight: 500;
+    font-size: 18px;
+    color: #1F2421;
+    padding: 5px;
+}
+
+p{
+    font-weight: 400;
+    color: #1F2421;
+    padding: 0px 5px;
+}
+
+nav{
+    background-color: white;
+    
+}
+
+li a{
+    font-weight: 500;
+    font-size: 20px;
+    color: #216869;
+    
+}
+
+li a:hover, .fas:hover, #logo:hover{
+    color: #49A078;
+}
+
+#logo{
+    font-weight: 800;
+    font-size: 40px;
+    color: #216869;
+}
+
+.fas{
+    color: #216869;
+}
+
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+   
+  }
+
+  #elemNav {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;   
+  }
+
+
+.principal{
+    background-color: #DCE1DE;
+}
+
+#encabezado{
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(img/encabezado.jpg);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 50vh;
+    padding: 0 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+
+.boton{
+    background-color: white;
+    display: block;
+    cursor: pointer;
+    padding: 10px 40px;
+    border: none;
+}
+
+.boton a{
+    color: #216869;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.boton a:hover{
+    color: #49A078;
+}
+
+
+#blogContainer{
+    padding: 20px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.blog img{
+    height: 300px;
+    width: auto;
+    box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.3);
+}
+
+.blog h6{
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+}
+
+/* página tienda */
+
+#productContainer{
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product{
+    box-shadow: 0px 0px 23px -5px rgba(0,0,0,0.3);
+}
+
+#caracteristicas{
+    background-color: white;
+    padding: 10px;
+}
+
+.product img{
+    height: auto;
+    width: 350px;
+}
+
+#precio, #titulo{
+    font-weight: 700;
+}
+
+.boton_añadir{
+    background-color: #216869;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.boton_añadir a{
+    color: white;
+
+}
+
+.boton_añadir a:hover{
+    color: #DCE1DE;
+
+}
+
+/* footer */
+footer{
+background-color: white;
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-evenly;
+align-items: center;
+}
+
+footer p{
+    color: #216869;
+    font-size: 14px;
+}
+
+#quote{
+    font-size: 14px;
+}
+
+#quoteAuthor{
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.fab{
+    color: #216869;
+    margin: 5px 20px;
+}

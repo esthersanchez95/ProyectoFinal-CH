@@ -90,6 +90,45 @@ ul {
     flex-wrap: wrap;   
   }
 
+.submenu{
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    width: max-content;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    background: white;
+    padding: 20px;
+}
+
+.vacio{
+    padding: 10px;
+    background-color: #216869;
+    text-align: center;
+}
+
+.button{
+    background: #216869;
+    color: white;
+    display: block;
+    padding: 5px;
+    font-size: small;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.button:hover{
+    background: #216869;
+    color: #DCE1DE;
+}
 
 .principal{
     background-color: #DCE1DE;

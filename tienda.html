@@ -21,7 +21,42 @@
                 <li><a id="logo" href="index.html">Natury</a></li>
                 <div id="elemNav">
                     <li><a href="tienda.html">TIENDA</a></li>
-                    <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li class='submenu'>
+                        <i class="fas fa-shopping-cart"></i>
+                        <div id="carrito">
+                            <table id='lista-carrito' class="u-full-width">
+
+                                <thead>
+                                    <tr>
+                                        <th>Productos</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- <tbody>
+                                    <tr>
+                                        <td>Perfume lavanda</td>
+                                        <td>5€</td>
+                                        <td><a href="#" class="borrar-producto"></a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Perfume lavanda</td>
+                                        <td>5€</td>
+                                        <td><a href="#" class="borrar-producto"></a></td>
+                                    </tr>
+                                </tbody> -->
+
+                            </table>
+
+                            <p class="mb-0">Total</p>
+                            <p class="ml-4 mb-0 shoppingCartTotal">0€</p>
+                            
+                            <a href="#" id="vaciar-carrito" class="button u-full-width">VACIAR CARRITO</a>
+                            
+                            
+                        </div>
+                    </li>
                 </div>
             </ul>
         </nav>

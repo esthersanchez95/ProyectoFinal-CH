@@ -101,7 +101,8 @@ for (let producto of productosJSON) {
 const carrito = document.getElementById('carrito');
 const shoppingCartRow = document.getElementById('lista-carrito');
 const botonAnadir = document.getElementsByClassName('boton_añadir');
-const vaciarCarritoBtn = document.getElementsByClassName('vaciar-carrito');
+
+// const vaciarCarritoBtn = document.getElementsByClassName('vaciar-carrito');
 
 cargarEventListeners();
 
@@ -110,6 +111,7 @@ function cargarEventListeners(){
 
     for (var i = 0 ; i < productosJSON.length; i++) {
         botonAnadir[i].addEventListener('click', comprarProducto);
+        
     };
 }
     
@@ -133,15 +135,25 @@ function addItemToShoppingCart (itemTitle, itemTipo, itemPrice){
                                         <td>${itemTitle}</td>
                                         <td>${itemTipo}</td>
                                         <td class="shoppingCartItemPrice">${itemPrice}€</td>
-                                        <input class="shoppingCartItemQuantity" type="number" value="1">
+                                        <td><input id="shoppingCartItemQuantity" type="number" value="1"></td>
                                     </tr>
                                 </tbody>
                                 `
     shoppingCartRow.innerHTML += shoppingCartContent;
     carrito.append(shoppingCartRow);
 
+    document.querySelector("#vaciar-carrito").addEventListener('click', removeShoppingCartItem);
+
+    document.querySelector('#shoppingCartItemQuantity').addEventListener('change', quantityChanged);
+    
     updateShoppingCartTotal();
 }
+
+//local storage
+localStorage.setItem("productos_almacenados", JSON.stringify(productosJSON)); 
+
+console.log(JSON.parse(localStorage.getItem("productos_almacenados")));
+
 
 //actualizar total carrito
 function updateShoppingCartTotal(){
@@ -153,21 +165,33 @@ function updateShoppingCartTotal(){
     shoppingCartItems.forEach((shoppingCartItem) => {
         const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
         const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('€', ''));
-
-        var shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity')||"";
-        if (shoppingCartItemQuantityElement=="")
-            {
-                document.getElementsByClassName("shoppingCartItemQuantity").innerHTML="";
-                return;
-            }; 
         
-        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
-        console.log(shoppingCartItemQuantityElement);
-        total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+        var shoppingCartItemQuantityElement = $('#shoppingCartItemQuantity').val();
+        
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement);
+        
+        total = total + (shoppingCartItemPrice * shoppingCartItemQuantity);
       });
+
+      shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
 
 }
 
+
+
+  function removeShoppingCartItem() {
+      shoppingCartRow.remove();
+      updateShoppingCartTotal();
+    }
+
+    
+  function quantityChanged(event) {
+        const input = event.target;
+        if (input.value <= 0){
+            input.value=1;};
+        
+      updateShoppingCartTotal();
+    }
 
 
 }); //final del load

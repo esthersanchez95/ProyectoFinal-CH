@@ -47,151 +47,238 @@ let productosJSON = [
          "precio": 4.90,
          "tipo": 'Cepillo corporal'
      },
-    
   ];
 
-
-window.addEventListener('load', () => {
-    console.log('DOM Cargado');
 
 //construcción clase de productos
 
 class Producto {
 
     constructor( titulo, precio, tipo, photo) {
-    
         this.titulo = titulo;
         this.precio = parseFloat(precio);
         this.tipo = tipo;
         this.photo = photo;
-
-    }
-
-    getPrecioConIva() {
-        return this.precio * 1.21;
-    }
-
-    getPrecio() {
-        return this.precio;
     }
 }
 
 
 //fichas de producto a partir del json
-const productContainer = document.getElementById('productContainer')
+$("#productContainer").append(`<div class="container">
+    <div class="items">
+        <div class="row">
 
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[0].photo}">
+                    <h3 class="item-title">${productosJSON[0].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[0].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[0].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
 
-for (let producto of productosJSON) {
-    let article = document.createElement('article');
-    article.className= 'item';
-    article.innerHTML = `<img id="foto" src="${producto.photo}">
-    <div id="caracteristicas">
-        <h6 id="titulo">${producto.titulo}</h6>
-        <p id="tipo">${producto.tipo}</p>
-        <p id="precio">${producto.precio}</p>
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[1].photo}">
+                    <h3 class="item-title">${productosJSON[1].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[1].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[1].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[2].photo}">
+                    <h3 class="item-title">${productosJSON[2].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[2].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[2].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[3].photo}">
+                    <h3 class="item-title">${productosJSON[3].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[3].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[3].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[4].photo}">
+                    <h3 class="item-title">${productosJSON[4].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[4].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[4].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[5].photo}">
+                    <h3 class="item-title">${productosJSON[5].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[5].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[5].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[6].photo}">
+                    <h3 class="item-title">${productosJSON[6].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[6].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[6].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md3 mr-1 ml-1">
+                <div class="item shadow mb-2">
+                    <img class="item-image" src="${productosJSON[7].photo}">
+                    <h3 class="item-title">${productosJSON[7].titulo}</h3>
+                    <h4 class="item-type">${productosJSON[7].tipo}</h4>
+                    <div class="item-details">
+                        <h4 class="item-price">${productosJSON[7].precio}€</h4>
+                        <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
     </div>
-    <button class="boton_añadir"><a href="#">AÑADIR AL CARRITO</a></button>`;
+</div>`);
 
-    productContainer.appendChild(article);
+
+// CARRITO DE COMPRA
+
+const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
+addToShoppingCartButtons.forEach((addToCartButton) => {
+  addToCartButton.addEventListener('click', addToCartClicked);
+});
+
+
+// aqui añadimos un evento click con jquery para cuando se pulsa el boton de comprar
+const comprarButton = $(".comprarButton").click(function () { 
+    alert(`Su compra se ha realizado con éxito`);
+});
+
+
+const shoppingCartItemsContainer = document.querySelector('.shoppingCartItemsContainer');
+
+function addToCartClicked(event) {
+  const button = event.target;
+  const item = button.closest('.item');
+
+  const itemTitle = item.querySelector('.item-title').textContent;
+  const itemPrice = item.querySelector('.item-price').textContent;
+  const itemImage = item.querySelector('.item-image').src;
+
+  addItemToShoppingCart(itemTitle, itemPrice, itemImage);
 }
 
+function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+  const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
+    'shoppingCartItemTitle'
+  );
+  for (let i = 0; i < elementsTitle.length; i++) {
+    if (elementsTitle[i].innerText === itemTitle) {
+      let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+      elementQuantity.value++;
+      
+      updateShoppingCartTotal();
+      return;
+    }
+  }
 
-//eventos
+  const shoppingCartRow = document.createElement('div');
+  const shoppingCartContent = `
+  <div class="row shoppingCartItem">
+        <div class="col-6">
+            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <img src=${itemImage} class="shopping-cart-image">
+                <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <p class="item-price mb-0 shoppingCartItemPrice">${itemPrice}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div
+                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                    value="1">
+                <button class="btn btn-danger buttonDelete" type="button">X</button>
+            </div>
+        </div>
+    </div>`;
+  shoppingCartRow.innerHTML = shoppingCartContent;
+  shoppingCartItemsContainer.append(shoppingCartRow);
 
-const carrito = document.getElementById('carrito');
-const shoppingCartRow = document.getElementById('lista-carrito');
-const botonAnadir = document.getElementsByClassName('boton_añadir');
+  shoppingCartRow.querySelector('.buttonDelete').addEventListener('click', removeShoppingCartItem);
 
-// const vaciarCarritoBtn = document.getElementsByClassName('vaciar-carrito');
+  shoppingCartRow.querySelector('.shoppingCartItemQuantity').addEventListener('change', quantityChanged);
 
-cargarEventListeners();
-
-//Funcion de todos los eventos
-function cargarEventListeners(){
-
-    for (var i = 0 ; i < productosJSON.length; i++) {
-        botonAnadir[i].addEventListener('click', comprarProducto);
-        
-    };
+  updateShoppingCartTotal();
 }
-    
 
-//Evento botón añadir al carrito
-function comprarProducto(event){
-    const but = event.target;
-    const item = but.closest('.item');
-    
-    const itemTitle = item.querySelector('#titulo').textContent;
-    const itemTipo = item.querySelector('#tipo').textContent;
-    const itemPrice = item.querySelector('#precio').textContent;
+function updateShoppingCartTotal() {
+  let total = 0;
+  const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
 
-    addItemToShoppingCart(itemTitle, itemTipo, itemPrice);
+  const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+  shoppingCartItems.forEach((shoppingCartItem) => {
+    const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
+    const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('€', ''));
+    const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
+    const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
+    total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+  });
+  shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
 }
 
-function addItemToShoppingCart (itemTitle, itemTipo, itemPrice){
-    const shoppingCartContent = `
-                               <tbody class= "shoppingCartItem">
-                                    <tr>  
-                                        <td>${itemTitle}</td>
-                                        <td>${itemTipo}</td>
-                                        <td class="shoppingCartItemPrice">${itemPrice}€</td>
-                                        <td><input id="shoppingCartItemQuantity" type="number" value="1"></td>
-                                    </tr>
-                                </tbody>
-                                `
-    shoppingCartRow.innerHTML += shoppingCartContent;
-    carrito.append(shoppingCartRow);
-
-    document.querySelector("#vaciar-carrito").addEventListener('click', removeShoppingCartItem);
-
-    document.querySelector('#shoppingCartItemQuantity').addEventListener('change', quantityChanged);
-    
-    updateShoppingCartTotal();
+function removeShoppingCartItem(event) {
+  const buttonClicked = event.target;
+  buttonClicked.closest('.shoppingCartItem').remove();
+  updateShoppingCartTotal();
 }
+
+function quantityChanged(event) {
+  const input = event.target;
+  input.value <= 0 ? (input.value = 1) : null;
+  updateShoppingCartTotal();
+}
+
+function comprarButtonClicked() {
+  shoppingCartItemsContainer.innerHTML = '';
+  updateShoppingCartTotal();
+}
+
 
 //local storage
 localStorage.setItem("productos_almacenados", JSON.stringify(productosJSON)); 
 
 console.log(JSON.parse(localStorage.getItem("productos_almacenados")));
-
-
-//actualizar total carrito
-function updateShoppingCartTotal(){
-    let total=0;
-    const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
-
-    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
-    
-    shoppingCartItems.forEach((shoppingCartItem) => {
-        const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
-        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('€', ''));
-        
-        var shoppingCartItemQuantityElement = $('#shoppingCartItemQuantity').val();
-        
-        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement);
-        
-        total = total + (shoppingCartItemPrice * shoppingCartItemQuantity);
-      });
-
-      shoppingCartTotal.innerHTML = `${total.toFixed(2)}€`;
-
-}
-
-
-
-  function removeShoppingCartItem() {
-      shoppingCartRow.remove();
-      updateShoppingCartTotal();
-    }
-
-    
-  function quantityChanged(event) {
-        const input = event.target;
-        if (input.value <= 0){
-            input.value=1;};
-        
-      updateShoppingCartTotal();
-    }
-
-
-}); //final del load

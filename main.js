@@ -282,3 +282,28 @@ function comprarButtonClicked() {
 localStorage.setItem("productos_almacenados", JSON.stringify(productosJSON)); 
 
 console.log(JSON.parse(localStorage.getItem("productos_almacenados")));
+
+//animaciones jquery
+var caja = $("#caja");
+
+$("#mostrar").hide();
+	
+	$("#mostrar").click(function(){
+		$(this).hide(30000).delay(20000);
+		$("#ocultar").show(2000).delay(20000);
+
+		caja.slideDown('slow').delay(3000);
+	});
+
+	$("#ocultar").click(function(){
+		$(this).hide(1000).delay(20000);
+		$("#mostrar").show(2000).delay(20000);
+
+		caja.slideUp('slow', function(){
+			console.log("Cartel ocultado");
+		});
+		
+	});
+
+
+
